@@ -2,6 +2,7 @@
   "name": "wikistack",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,11 +10,38 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sashahavia/wikistack.git"
+=======
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evie33/wikistack.git"
+>>>>>>> 23a734b59910613f448ded5d5b18c4373a6293ee
   },
   "author": "",
   "license": "ISC",
   "bugs": {
+<<<<<<< HEAD
     "url": "https://github.com/sashahavia/wikistack/issues"
   },
   "homepage": "https://github.com/sashahavia/wikistack#readme"
+=======
+    "url": "https://github.com/evie33/wikistack/issues"
+  },
+  "homepage": "https://github.com/evie33/wikistack#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "html-template-tag": "^2.0.0",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.10"
+  }
+>>>>>>> 23a734b59910613f448ded5d5b18c4373a6293ee
 }
