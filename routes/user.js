@@ -1,28 +1,27 @@
 const express = require("express");
 const router = express.Router();
+const { Page, User } = require("../models");
+const { addPage, editPage, main, userList, userPages, wikiPage} = require("../views");
 
-router.get("/", async (req, res, next) => {
-  res.send('Got to GET/user');
+router.get('/', async (req, res, next) =>{
+  try {
+    const users = await User.findAll();
+    res.send(userList(users));
+  } catch(error){ next(error) }
 });
 
-router.post("/", async (req, res, next) => {
-  res.send('Got to POST/user');
-});
+router.get('/:userId', async (req, res, next)=> {
+  try {
+    const user = await User.findById(req.params.userId);
+    // const pages = await Page.findAll({
+    //   where: {
+    //     authorId: req.params.userId
+    //   }
+    // });
+    const pages = await user.getPages();
+    res.send(userPages(user, pages));
+  } catch (err) { next(err) }
 
-router.get("/add", async (req, res, next) => {
-  res.send('Got to GET/user/add');
-});
-
-router.get("/:id", async (req, res, next) => {
-  res.redirect('/');
-});
-
-router.put("/:id", async (req, res, next) => {
-  res.send('Got to PUT/user');
-});
-
-router.delete("/:id", async (req, res, next) => {
-  res.send('Got to DELETE/user');
 });
 
 module.exports = router;

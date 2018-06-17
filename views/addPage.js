@@ -7,9 +7,9 @@ module.exports = () => layout(html`
   <form method="POST" action="/wiki/">
 
     <div class="form-group">
-    <label for="author" class="col-sm-2 control-label">Author</label>
+    <label for="name" class="col-sm-2 control-label">Author</label>
     <div class="col-sm-10">
-        <input id="author" name="author" type="text" class="form-control"/>
+        <input id="name" name="name" type="text" class="form-control"/>
       </div>
     </div>
 
@@ -30,14 +30,17 @@ module.exports = () => layout(html`
     <div class="form-group">
     <label for="content" class="col-sm-2 control-label">Content</label>
     <div class="col-sm-10">
-      <textarea class="form-control" name="content" id="content" rows="3"></textarea>
+      <textarea class="form-control" name="content" id="content" rows="15"></textarea>
       </div>
     </div>
 
     <div class="form-group">
       <label for="status" class="col-sm-2 control-label">Status</label>
       <div class="col-sm-10">
-        <input id="status" name="status" type="text" class="form-control"/>
+        <select class="form-control" id="status" name="status">
+          <option>open</option>
+          <option>closed</option>
+        </select>
       </div>
     </div>
 
